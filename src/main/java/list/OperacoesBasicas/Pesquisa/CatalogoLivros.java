@@ -24,4 +24,29 @@ public class CatalogoLivros {
         }
         return livrosPorAutor;
     }
+
+    public List<Livro> pesquisarPorIntervaloAnos(int anoInicial, int anoFinal ) {
+        List<Livro> livrosPorIntervaloAnos = new ArrayList<>();
+        if(!livrosList.isEmpty()){
+            for(Livro l: livrosList){
+                if(l.getAnoPublicacao() >= anoInicial && l.getAnoPublicacao()<=anoFinal){
+                    livrosPorIntervaloAnos.add(l);
+                }
+            }
+        }
+        return livrosPorIntervaloAnos;
+    }
+
+    public Livro pesquisarPorTitulo(String titulo){
+        Livro livroPorTitulo = null;
+        if(!livrosList.isEmpty()){
+            for(Livro l: livrosList){
+                if(l.getTitulo().equalsIgnoreCase(titulo)){
+                    livroPorTitulo = l;
+                    break;
+                }
+            }
+        }
+        return livroPorTitulo;
+    }
 }
