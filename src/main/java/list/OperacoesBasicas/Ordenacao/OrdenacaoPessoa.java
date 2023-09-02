@@ -23,9 +23,21 @@ public class OrdenacaoPessoa {
     }
 
     public List<Pessoa> ordenarPorAltura(){
-        List<Pessoa> pessoasPorAltura = new ArrayList<>();
-        Collections.sort(pessoasPorAltura,new ComparatorPorAltura());
+        List<Pessoa> pessoasPorAltura = new ArrayList<>(pessoaList);
+        Collections.sort(pessoasPorAltura, new ComparatorPorAltura());
+
         return pessoasPorAltura;
+    }
+
+    public static void main(String[] args) {
+        OrdenacaoPessoa ordenacaoPessoa = new OrdenacaoPessoa();
+        ordenacaoPessoa.adicionarPessoas("Raul",20,1.40);
+        ordenacaoPessoa.adicionarPessoas("Raul2",30,1.50);
+        ordenacaoPessoa.adicionarPessoas("Raul3",25,1.60);
+        ordenacaoPessoa.adicionarPessoas("Raul4",20,1.70);
+
+        System.out.println(ordenacaoPessoa.ordenarPorAltura());
+        System.out.println(ordenacaoPessoa.ordenarPorIdade());
     }
 
 }

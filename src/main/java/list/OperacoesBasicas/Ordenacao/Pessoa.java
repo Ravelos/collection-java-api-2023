@@ -40,7 +40,7 @@ public class Pessoa implements Comparable<Pessoa>{
     }
 }
 
-class ComparatorPorAltura implements Comparator<Pessoa>{
+    class ComparatorPorAltura implements Comparator<Pessoa>{
 
     @Override
     public int compare(Pessoa p1, Pessoa p2) {
