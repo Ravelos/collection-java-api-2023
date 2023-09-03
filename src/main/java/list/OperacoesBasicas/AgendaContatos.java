@@ -21,7 +21,7 @@ public class AgendaContatos {
             agendaContatoMap.remove(nome);
         }
     }
-    public void exibirContato(){
+    public void exibirContatos(){
         System.out.println(agendaContatoMap);
     }
 
@@ -31,5 +31,19 @@ public class AgendaContatos {
            numeroPorNome = agendaContatoMap.get(nome);
         }
         return numeroPorNome;
+    }
+
+    public static void main(String[] args) {
+        AgendaContatos agendaContatos = new AgendaContatos();
+        agendaContatos.adicionarContato("Raul",2345678);
+        agendaContatos.exibirContatos();
+        agendaContatos.adicionarContato("Marcos",2345672);
+        agendaContatos.adicionarContato("Freddy",2345674);
+        agendaContatos.adicionarContato("Francisco",2345677);
+        agendaContatos.exibirContatos();
+        agendaContatos.removerContato("Marcos");
+        agendaContatos.exibirContatos();
+        agendaContatos.pesquisarPorNome("Raul");
+
     }
 }
