@@ -43,7 +43,7 @@ public class AgendaContatos {
         agendaContatos.exibirContatos();
         agendaContatos.removerContato("Marcos");
         agendaContatos.exibirContatos();
-        agendaContatos.pesquisarPorNome("Raul");
+        System.out.println("This is the user's number: "+ agendaContatos.pesquisarPorNome("Raul"));
 
     }
 }
