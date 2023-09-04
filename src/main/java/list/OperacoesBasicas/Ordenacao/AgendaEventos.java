@@ -28,7 +28,7 @@ public class AgendaEventos {
     public void obterProximoEvento(){
         LocalDate dataAtual = LocalDate.now();
         Map<LocalDate, Evento> eventosTreeMap = new TreeMap<>(eventoMap);
-        for (Map.Entry<LocalDate, Evento> entry: eventoMap.entrySet()){
+        for (Map.Entry<LocalDate, Evento> entry: eventosTreeMap.entrySet()){
             if(entry.getKey().isEqual(dataAtual)|| entry.getKey().isAfter(dataAtual)){
                 System.out.println("O próximo evento será "+ entry.getValue()+" na data "+ entry.getKey());
                 break;
@@ -39,7 +39,7 @@ public class AgendaEventos {
     public static void main(String[] args) {
         AgendaEventos agendaEventos = new AgendaEventos();
         agendaEventos.adicionarEvento(LocalDate.of(2022, Month.JULY,12),"Bautizo","Atração 1");
-        agendaEventos.adicionarEvento(LocalDate.of(2024, Month.DECEMBER,12),"Casorio","Atração 1");
+        agendaEventos.adicionarEvento(LocalDate.of(2024, 7,12),"Casorio","Atração 1");
         agendaEventos.adicionarEvento(LocalDate.of(2024, Month.JANUARY,12),"Divorcio","Atração 1");
         agendaEventos.adicionarEvento(LocalDate.of(2023, Month.OCTOBER,12),"Nacimiento","Atração 1");
         agendaEventos.exibirAgenda();
